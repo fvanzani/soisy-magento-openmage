@@ -1,0 +1,18 @@
+{
+    "name": "soisy/magento-soisy-payment",
+    "license": "OSL-3.0",
+    "type": "magento-module",
+    "version": "1.0.0",
+    "description": "Magento 1.x Soisy's installment payment method",
+    "require": {
+        "magento-hackathon/magento-composer-installer": "*"
+    },
+    "authors":[
+        {
+            "name":"Soisy"
+        },
+        {
+            "name":"Magma Consulting"
+        }
+    ]
+}

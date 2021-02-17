@@ -1,0 +1,13 @@
+
+<?php
+if (!$this->isSimulationEnabled()) {
+    return;
+}
+?>
+<div class="soisy-loan-quote-wrapper">
+<soisy-loan-quote
+        shop-id="<?php echo $this->htmlEscape($this->getShopIdSimulation());?>"
+        amount="<?php echo  $this->htmlEscape($this->getAmount());?>"
+        instalments="<?php echo $this->htmlEscape($this->getInstalments());?>"
+        zero-interest-rate="<?php echo $this->htmlEscape($this->getZeroInterestRate());?>"></soisy-loan-quote>
+</div>

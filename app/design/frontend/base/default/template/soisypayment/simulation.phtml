@@ -1,0 +1,18 @@
+<?php
+if (!$this->isSimulationEnabled()) {
+    return;
+}
+?>
+<?php
+if (is_null(Mage::registry('current_product'))) {
+    return;
+}
+$price = Mage::registry('current_product')->getFinalPrice();
+?>
+<div class="soisy-loan-quote-wrapper">
+<soisy-loan-quote
+        shop-id="<?php echo $this->htmlEscape($this->getShopIdSimulation());?>"
+        amount="<?php echo  $this->htmlEscape($price);?>"
+        instalments="<?php echo $this->htmlEscape($this->getInstalments());?>"
+        zero-interest-rate="<?php echo $this->htmlEscape($this->getZeroInterestRate());?>"></soisy-loan-quote>
+</div>

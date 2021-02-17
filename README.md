@@ -6,8 +6,6 @@ Facts
 -----
 - version: 1.0.0
 - extension key: Soisy_SoisyPayment
-- [extension on GitHub](https://github.com/soisy/magento-soisy-payment)
-- [direct download link](https://github.com/soisy/magento-soisy-payment/archive/1.0.0.tar.gz)
 
 Description
 -----------
@@ -31,8 +29,7 @@ Installation Instructions
 
 1) Installation options:
 
-   * composer: `composer require soisy/magento-soisy-payment`
-* modman: `modman clone git@github.com:soisy/magento-soisy-payment.git` 
+* modman: `modman clone git@github.com:soisy/magento-openmage.git` 
 
 * maual: copy all the files into your document root.
 

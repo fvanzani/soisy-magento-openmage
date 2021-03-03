@@ -7,7 +7,8 @@ if (!$this->isSimulationEnabled()) {
 if (is_null(Mage::registry('current_product'))) {
     return;
 }
-$price = Mage::registry('current_product')->getFinalPrice();
+$product=Mage::registry('current_product');
+$price =  Mage::helper('tax')->getPrice($product, $product->getFinalPrice(), true,  null, null, null, null, null, false);
 ?>
 <div class="soisy-loan-quote-wrapper">
 <soisy-loan-quote

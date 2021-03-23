@@ -90,7 +90,7 @@
                 <shop_id_simulation>soisytests</shop_id_simulation>
                 <auth_token>partnerkey</auth_token>
 
-                <min_amount>250</min_amount>
+                <min_amount>100</min_amount>
 
                 <success_description>
 <![CDATA[<h2>Richiesta pagamento rateale con Soisy effettuata</h2>

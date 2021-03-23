@@ -32,4 +32,9 @@ class Soisy_SoisyPayment_Block_Simulation extends Mage_Payment_Block_Form
     {
         return $this->helper->isSimulationEnabled();
     }
+
+    protected function getMinAmount()
+    {
+        return $this->helper->getMinAmount();
+    }
 }

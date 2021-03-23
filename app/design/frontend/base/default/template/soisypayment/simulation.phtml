@@ -2,13 +2,18 @@
 if (!$this->isSimulationEnabled()) {
     return;
 }
+
 ?>
 <?php
 if (is_null(Mage::registry('current_product'))) {
     return;
 }
 $product=Mage::registry('current_product');
-$price =  Mage::helper('tax')->getPrice($product, $product->getFinalPrice(), true,  null, null, null, null, null, false);
+$price=Mage::helper('tax')->getPrice($product, $product->getFinalPrice(), true,  null, null, null, null, null, false);
+if ($price<$this->getMinAmount()) {
+    return;
+}
+
 ?>
 <div class="soisy-loan-quote-wrapper">
 <soisy-loan-quote

@@ -24,16 +24,18 @@ Tested on:
 
 The module should be compatible also with magento >= 1.9.1 and openmage 20.x
 
-Installation Instructions
+ Installation Instructions
 -------------------------
+### Installation options:
 
-1) Installation options:
+### Modman: 
+* Command: `modman clone git@github.com:soisy/magento-openmage.git`
 
-* modman: `modman clone git@github.com:soisy/magento-openmage.git` 
+### Maual
 
-* maual: copy all the files into your document root.
-
-2) Clear the cache, logout from the admin panel and then login again.
+1. Extract `soisy-magento-openmage-main`;
+2. Copy all extracted folder into your root directory (app-assets-skin-composer-license-modman);
+3. Clear the cache, logout from the admin panel and then login again.
 
 Configuration
 -------------

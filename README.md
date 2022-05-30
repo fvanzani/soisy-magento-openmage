@@ -19,7 +19,7 @@ Compatibility
 -------------
 Tested on:
 
-- Magento  1.9.3.10 (with php 5.6)
+- Magento  1.9.4.5 (with php 5.6)
 - OpenMage 19.4.x (with php 7.2)
 
 The module should be compatible also with magento >= 1.9.1 and openmage 20.x

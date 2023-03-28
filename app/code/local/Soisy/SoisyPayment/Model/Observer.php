@@ -7,20 +7,28 @@ class Soisy_SoisyPayment_Model_Observer
      * @param Varien_Event_Observer $observer
      */
     public function hideSoisyPayment(Varien_Event_Observer $observer) {
-        $method = $observer->getEvent()->getMethodInstance();
-        if($method->getCode()=='soisypayment' ) {
-            $this->log("hideSoisyPayment: soisypayment is active, check order total...");
-            $quote = $observer->getEvent()->getQuote();
-            $grandTotal = (float) $quote->getgrandTotal();
-            $minAmount = (float) Mage::helper('soisypayment')->getMinAmount();
-            if ($grandTotal<$minAmount) {
-                $result = $observer->getEvent()->getResult();
-                 $result->isAvailable = false;
-                $this->log("hideSoisyPayment: grandTotal ($grandTotal) < than minAmount ($minAmount), hide soisy payment!");
-            } else {
-                $this->log("hideSoisyPayment: grandTotal ($grandTotal) >= minAmount ($minAmount), keep showing soisy payment");
+        $this->log("hideSoisyPayment: begin");
+        try {
+            $method = $observer->getEvent()->getMethodInstance();
+            $this->log("hideSoisyPayment: $method");
+            if ($method->getCode() == 'soisypayment') {
+                $this->log("hideSoisyPayment: soisypayment is active, check order total...");
+                $quote = $observer->getEvent()->getQuote();
+                $grandTotal = (float)$quote->getgrandTotal();
+                $minAmount = (float)Mage::helper('soisypayment')->getMinAmount();
+                if ($grandTotal < $minAmount) {
+                    $result = $observer->getEvent()->getResult();
+                    $result->isAvailable = false;
+                    $this->log("hideSoisyPayment: grandTotal ($grandTotal) < than minAmount ($minAmount), hide soisy payment!");
+                } else {
+                    $this->log("hideSoisyPayment: grandTotal ($grandTotal) >= minAmount ($minAmount), keep showing soisy payment");
+                }
             }
+        } catch (Exception $e) {
+            $this->log("hideSoisyPayment: error");
+            $this->log("hideSoisyPayment: ".$e->getMessage());
         }
+        $this->log("hideSoisyPayment: end");
     }
 
     /**
@@ -44,7 +52,8 @@ class Soisy_SoisyPayment_Model_Observer
         }
         Mage::register('soisyOrderCreate', true);
 
-        $order = $event->getOrder();
+        // order cloned (to avoid conflict with nexi payment)
+        $order = clone $event->getOrder();
         $order->load($order->getId());
         $payment = $order->getPayment()->getMethodInstance()->getCode();
 
@@ -52,6 +61,8 @@ class Soisy_SoisyPayment_Model_Observer
             $this->log( "soisyOrderCreate: payment ($payment) is not ".($helper->getPaymentCode()).", skip" );
             return;
         }
+        // from this point order not cloned
+        $order = $event->getOrder();
 
         if ($order->getSoisyToken()) { // not implemented
             $this->log( "soisyOrderCreate: token already exists, skip" );

@@ -29,14 +29,22 @@ The module should be compatible also with magento >= 1.9.1
 -------------------------
 ### Installation options:
 
-### Modman: 
+#### Modman (recommended): 
 * Command: `modman clone git@github.com:soisy/magento-openmage.git`
+* Run commands:
 
-### Manual
+```
+n98-magerun.phar dev:module:enable Soisy_SoisyPayment
+n98-magerun.phar sys:setup:run
+n98-magerun.phar cache:clean
+``` 
+
+#### Manual
 
 1. Extract `soisy-magento-openmage-main`;
 2. Copy all extracted folder into your root directory (app-assets-skin-composer-license-modman);
 3. Clear the cache, logout from the admin panel and then login again.
+
 
 Configuration
 -------------

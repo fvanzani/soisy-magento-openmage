@@ -106,7 +106,7 @@ Once the customer place the order the store manager can see some information ins
 
 ![Order status comments](assets/order_status_comments.png)
 
-When Soisy approves an order the store manager should change manually the magento order status from *pending* to *processing*.
+When PagoLight approves an order the store manager should change manually the magento order status from *pending* to *processing*.
 
 ## Features not implemented or not tested
 

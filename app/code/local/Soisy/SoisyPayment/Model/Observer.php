@@ -9,9 +9,15 @@ class Soisy_SoisyPayment_Model_Observer
     public function hideSoisyPayment(Varien_Event_Observer $observer) {
         $this->log("hideSoisyPayment: begin");
         try {
-            $method = $observer->getEvent()->getMethodInstance();
+
+            try {
+                $method = $observer->getEvent()->getMethodInstance()->getCode();
+            } catch (Exception $e) {
+                $method='';
+            }
+
             $this->log("hideSoisyPayment: $method");
-            if ($method->getCode() == 'soisypayment') {
+            if ($method == 'soisypayment') {
                 $this->log("hideSoisyPayment: soisypayment is active, check order total...");
                 $quote = $observer->getEvent()->getQuote();
                 $grandTotal = (float)$quote->getgrandTotal();
@@ -112,15 +118,16 @@ class Soisy_SoisyPayment_Model_Observer
         $orderUrl="{$endpoint}/api/shops/{$shopId}/orders/$token";
         $this->log("soisyOrderCreate: orderUrl: $orderUrl");
 
+        // <b>Soisy order info:</b> <a target='_blank' href='$orderUrl' >$orderUrl</a>   <br>\n
+
         if ($token)
             $order->addStatusHistoryComment("
-<b>Soisy token:</b> $token <br>\n
-<b>Soisy order info:</b> <a target='_blank' href='$orderUrl' >$orderUrl</a>   <br>\n
+<b>PagoLight token:</b> $token <br>\n
 <b>Customer webapp url:</b> <a target='_blank' href='$webAppUrl' >$webAppUrl</a>  ")
                 ->setIsCustomerNotified(false)->setIsVisibleOnFront(false);
 
         if (!$token)
-            $order->addStatusHistoryComment("<b>Soisy token:</b> ERROR  ")
+            $order->addStatusHistoryComment("<b>PagoLight token:</b> ERROR  ")
                 ->setIsCustomerNotified(false)->setIsVisibleOnFront(false);
 
         $order->setSoisyToken($token);

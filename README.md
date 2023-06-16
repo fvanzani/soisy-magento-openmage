@@ -1,6 +1,6 @@
-Magento 1 Soisy Payment Extension
+Magento 1 PagoLight Payment Extension
 =================================
-Magento 1.x Soisy's installment payment method
+Magento 1.x PagoLight's installment payment method
 
 Facts
 -----
@@ -21,8 +21,9 @@ Tested on:
 
 - Magento  1.9.4.5 (with php 5.6)
 - OpenMage 19.4.x (with php 7.2)
+- OpenMage 20.x (with php 8.2)
 
-The module should be compatible also with magento >= 1.9.1 and openmage 20.x
+The module should be compatible also with magento >= 1.9.1 
 
  Installation Instructions
 -------------------------
@@ -31,7 +32,7 @@ The module should be compatible also with magento >= 1.9.1 and openmage 20.x
 ### Modman: 
 * Command: `modman clone git@github.com:soisy/magento-openmage.git`
 
-### Maual
+### Manual
 
 1. Extract `soisy-magento-openmage-main`;
 2. Copy all extracted folder into your root directory (app-assets-skin-composer-license-modman);
@@ -67,23 +68,23 @@ The customer can see the intalments simulated on the product view page:
 
 ![simulation widget on product page](assets/simulation.png)
 
-The customer choose the Soisy payment method:
+The customer choose the PagoLight payment method:
 
 ![Checkout](assets/checkout.png)
 
-When the order is placed the user lands on the magento success page. In this page the Soisy description could be *success description* (the user is redirected to Soisy) or *error descripton* (the user is not redirected to Soisy).
+When the order is placed the user lands on the magento success page. In this page the PagoLight description could be *success description* (the user is redirected to PagoLight/Soisy) or *error descripton* (the user is not redirected to PagoLight/Soisy).
 
-Magento success page, Soisy success: 
+Magento success page, PagoLight success: 
 
-![Success page before redirect to Soisy](assets/success_before_redirect.png)
+![Success page before redirect to PagoLight](assets/success_before_redirect.png)
 
-Magento success page, Soisy error, the user in not redirected: 
+Magento success page, PagoLight error, the user in not redirected: 
 
-![Success page before redirect to Soisy](assets/error_before_redirect.png)
+![Success page before redirect to PagoLight](assets/error_before_redirect.png)
 
 
 
-Once entered all information into Soisy page the customer is redirected again, on a magento Soisy final success page (or final error page):
+Once entered all information into PagoLight page the customer is redirected again, on a magento PagoLight final success page (or final error page):
 
 ![Final success page](assets/success.png)
 
@@ -93,7 +94,7 @@ Once entered all information into Soisy page the customer is redirected again, o
 
 #### Manage oders
 
-Once the customer place the order the store manager can see some information inside status comments. here the store manager could see the *soisy token* used to map the magento order with Soisy order.  
+Once the customer place the order the store manager can see some information inside status comments. here the store manager could see the *soisy token* used to map the magento order with PagoLight order.  
 
 ![Order status comments](assets/order_status_comments.png)
 
@@ -132,4 +133,4 @@ Licence
 
 Copyright
 ---------
-(c) 2021 Soisy
+(c) 2023 PagoLight

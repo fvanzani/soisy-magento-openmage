@@ -2,13 +2,13 @@
 <config>
     <tabs>
         <soisy translate="label" module="soisypayment">
-            <label>Soisy</label>
+            <label>PagoLight</label>
             <sort_order>300</sort_order>
         </soisy>
     </tabs>
    <sections>
        <soisy_soisypayment  translate="label" module="soisypayment">
-           <label>Soisy</label>
+           <label>PagoLight</label>
            <tab>soisy</tab>
            <frontend_type>text</frontend_type>
            <sort_order>0</sort_order>
@@ -25,9 +25,9 @@
                    <show_in_website>1</show_in_website>
                    <show_in_store>1</show_in_store>
                    <comment><![CDATA[
-                      Soisy Payment Module (basci implementation).<br>
+                      PagoLight Payment Module (basic implementation).<br>
 
-                      Go to Sales -> Payment Methods -> Soisy
+                      Go to Sales -> Payment Methods -> PagoLight
 
                       ]]>
                    </comment>
@@ -39,7 +39,7 @@
         <payment>
             <groups>
                 <soisypayment translate="label" module="soisypayment">
-                    <label>Soisy</label>
+                    <label>PagoLight</label>
                     <sort_order>700</sort_order>
                     <show_in_default>1</show_in_default>
                     <show_in_website>1</show_in_website>
@@ -156,27 +156,27 @@
                             <comment>Auth Token. Sandbox: "partnerkey"</comment>
                         </auth_token>
                         <endpoint translate="label">
-                            <label>Soisy Endpoint</label>
+                            <label>PagoLight Endpoint</label>
                             <frontend_type>text</frontend_type>
                             <sort_order>52</sort_order>
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
                             <show_in_store>0</show_in_store>
                             <comment><![CDATA[
-                             Soisy Endpoint. <br>
+                             PagoLight Endpoint. <br>
                              Sandbox: "http://api.sandbox.soisy.it" <br>
                              Production: https://api.soisy.it
                                ]]></comment>
                         </endpoint>
                         <webapp translate="label">
-                            <label>Soisy Webapp url</label>
+                            <label>PagoLight Webapp url</label>
                             <frontend_type>text</frontend_type>
                             <sort_order>54</sort_order>
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
                             <show_in_store>0</show_in_store>
                             <comment><![CDATA[
-                                Soisy Loan url <br>
+                                PagoLight Loan url <br>
                                 Sandbox: "http://shop.sandbox.soisy.it" <br>
                                 Production: "https://shop.soisy.it"
                                 ]]></comment>
@@ -188,7 +188,7 @@
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
                             <show_in_store>0</show_in_store>
-                            <comment>Minimum order amount. Default: 250</comment>
+                            <comment>Minimum order amount. Default: 60</comment>
                         </min_amount>
 
                         <success_description translate="label">
@@ -207,7 +207,7 @@
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>
-                            <comment>This description is showed when the customer comes back from Soisy to the store and an error occurred.</comment>
+                            <comment>This description is showed when the customer comes back from PagoLight to the store and an error occurred.</comment>
                         </error_description>
 
                         <success_description_before_redirect translate="label">
@@ -227,7 +227,7 @@
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>
-                            <comment>This description is showed on the magento success page before redirect, but the user is not redirected to Soisy because an error occurred during Soisy order creation.</comment>
+                            <comment>This description is showed on the magento success page before redirect, but the user is not redirected to PagoLight because an error occurred during PagoLight order creation.</comment>
                         </error_description_before_redirect>
                     </fields>
                 </soisypayment>

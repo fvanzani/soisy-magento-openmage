@@ -3,13 +3,13 @@
     "license": "OSL-3.0",
     "type": "magento-module",
     "version": "1.0.0",
-    "description": "Magento 1.x Soisy's installment payment method",
+    "description": "Magento 1.x PagoLight's installment payment method",
     "require": {
         "magento-hackathon/magento-composer-installer": "*"
     },
     "authors":[
         {
-            "name":"Soisy"
+            "name":"PagoLight"
         },
         {
             "name":"Magma Consulting"

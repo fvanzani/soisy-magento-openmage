@@ -5,7 +5,7 @@ class Soisy_SoisyPayment_IndexController extends Mage_Core_Controller_Front_Acti
     public function IndexAction() {
 
         $this->loadLayout();
-        $this->getLayout()->getBlock("head")->setTitle($this->__("Soisy"));
+        $this->getLayout()->getBlock("head")->setTitle($this->__("PagoLight"));
         $breadcrumbs = $this->getLayout()->getBlock("breadcrumbs");
         $breadcrumbs->addCrumb("home", array(
             "label" => $this->__("Home Page"),
@@ -14,8 +14,8 @@ class Soisy_SoisyPayment_IndexController extends Mage_Core_Controller_Front_Acti
         ));
 
         $breadcrumbs->addCrumb("soisy", array(
-            "label" => $this->__("Soisy"),
-            "title" => $this->__("Soisy")
+            "label" => $this->__("PagoLight"),
+            "title" => $this->__("PagoLight")
         ));
 
         if (!is_null($this->getRequest()->getParam('error')))

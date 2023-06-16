@@ -65,8 +65,12 @@ class Soisy_SoisyPayment_Helper_Data extends Mage_Core_Helper_Abstract
     public function getSoisyToken()
     {
         $orderId = Mage::getSingleton('checkout/session')->getLastRealOrderId();
+        $this->log(" getSoisyToken: orderId=$orderId");
         $order = Mage::getModel("sales/order")->loadByIncrementId($orderId);
-        return $order->getSoisyToken();
+
+        $soisyToken=$order->getSoisyToken();
+        $this->log(" getSoisyToken: soisyToken=$soisyToken");
+        return $soisyToken;
         //return Mage::getSingleton('core/session')->getSoisyToken();
     }
 

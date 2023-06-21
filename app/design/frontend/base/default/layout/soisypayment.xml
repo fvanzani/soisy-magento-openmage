@@ -17,8 +17,13 @@
             <block type="core/text" name="loan-quote-widget">
                 <action method="setText">
                     <text>
+                        <![CDATA[<script async defer src="https://upstream.heidipay.com/sdk/heidi-upstream-lib.js"></script>]]>
+                    </text>
+                    <!--
+                    <text>
                         <![CDATA[<script async defer src="https://cdn.soisy.it/loan-quote-widget.js" ></script>]]>
                     </text>
+                    -->
                 </action>
             </block>
             <action method="addCss">
@@ -30,15 +35,26 @@
         </reference>
     </catalog_product_view>
 
+
+
     <checkout_onepage_index>
         <reference name="head">
+
             <block type="core/text" name="loan-quote-widget">
                 <action method="setText">
+
                     <text>
-                        <![CDATA[<script async defer src="https://cdn.soisy.it/loan-quote-widget.js" ></script>]]>
+                        <![CDATA[<script async defer src="https://upstream.heidipay.com/sdk/heidi-upstream-lib.js" type="application/javascript"></script>]]>
                     </text>
+
+                    <!--
+                            <text>
+                                <![CDATA[<script async defer src="https://cdn.soisy.it/loan-quote-widget.js" ></script>]]>
+                            </text>
+          -->
                 </action>
             </block>
+
             <action method="addCss">
                 <stylesheet>css/soisypayment/simulation.css</stylesheet>
             </action>

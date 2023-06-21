@@ -7,10 +7,10 @@ $price_in_minor_unit = (int) (100*$this->getAmount());
 // todo: usare config
 $minimum_order_value = 6000;
 $maximum_order_value = 300000;
-if ((int)$price_in_minor_unit < $minimum_order_value) {
+if ($price_in_minor_unit < $minimum_order_value) {
     return;
 }
-if ((int)$price_in_minor_unit > $maximum_order_value) {
+if ($price_in_minor_unit > $maximum_order_value) {
     return;
 }
 ?>

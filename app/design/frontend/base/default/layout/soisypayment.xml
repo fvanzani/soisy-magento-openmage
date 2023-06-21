@@ -14,18 +14,24 @@
 
     <catalog_product_view translate="label">
         <reference name="head">
-            <block type="core/text" name="loan-quote-widget">
-                <action method="setText">
-                    <text>
-                        <![CDATA[<script async defer src="https://upstream.heidipay.com/sdk/heidi-upstream-lib.js"></script>]]>
-                    </text>
-                    <!--
-                    <text>
-                        <![CDATA[<script async defer src="https://cdn.soisy.it/loan-quote-widget.js" ></script>]]>
-                    </text>
-                    -->
-                </action>
-            </block>
+            <!--
+ <block type="core/text" name="loan-quote-widget">
+     <action method="setText">
+         <text>
+
+         </text>
+
+      <text>
+          <![CDATA[<script async defer src="https://upstream.heidipay.com/sdk/heidi-upstream-lib.js"></script>]]>
+      </text>
+
+      <text>
+          <![CDATA[<script async defer src="https://cdn.soisy.it/loan-quote-widget.js" ></script>]]>
+      </text>
+
+     </action>
+ </block>
+      -->
             <action method="addCss">
                 <stylesheet>css/soisypayment/simulation.css</stylesheet>
             </action>
@@ -35,26 +41,27 @@
         </reference>
     </catalog_product_view>
 
-
+    <catalog_product_view translate="label">
+        <reference name="before_body_end">
+            <block type="core/text" name="loan-quote-widget2">
+                <action method="setText">
+                    <text>
+                        <![CDATA[<script  src="https://upstream.heidipay.com/sdk/heidi-upstream-lib.js"></script>]]>
+                    </text>
+                </action>
+            </block>
+        </reference>
+    </catalog_product_view>
 
     <checkout_onepage_index>
         <reference name="head">
-
             <block type="core/text" name="loan-quote-widget">
                 <action method="setText">
-
                     <text>
                         <![CDATA[<script async defer src="https://upstream.heidipay.com/sdk/heidi-upstream-lib.js" type="application/javascript"></script>]]>
                     </text>
-
-                    <!--
-                            <text>
-                                <![CDATA[<script async defer src="https://cdn.soisy.it/loan-quote-widget.js" ></script>]]>
-                            </text>
-          -->
                 </action>
             </block>
-
             <action method="addCss">
                 <stylesheet>css/soisypayment/simulation.css</stylesheet>
             </action>
